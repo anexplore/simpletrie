@@ -16,7 +16,6 @@ public class Trie<T extends Comparable> {
 
 	public Trie() {
 		root = new TrieNode<T>();
-		root.count = 0L;
 	}
 
 	/**
@@ -25,10 +24,11 @@ public class Trie<T extends Comparable> {
 	 * @param letters
 	 */
 	public void addWord(T[] letters) {
-		if (letters == null) {
+		if (letters == null || letters.length == 0) {
 			return;
 		}
 		TrieNode<T> node = root;
+		root.incCount();
 		int len = letters.length - 1;
 		for (int i = 0; i < len; i++) {
 			node = node.insertChild(letters[i], false);
