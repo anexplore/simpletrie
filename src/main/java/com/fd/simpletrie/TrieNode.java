@@ -1,4 +1,4 @@
-package com.fd;
+package com.fd.simpletrie;
 
 import java.util.LinkedList;
 import java.util.List;
